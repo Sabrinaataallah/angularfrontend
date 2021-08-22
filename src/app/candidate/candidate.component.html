@@ -1,0 +1,337 @@
+<html>
+  <head> </head>
+  <body>
+    <!-- <div class="panel panel-default">
+  <div class="panel-heading">inscription</div>
+  <div>
+    <form data-toggle="validator" role="form" #f="ngForm" (ngSubmit)="onInscri(f.value)" >
+      <div class="form-group">
+        <label class="control-label">firstname</label>
+        <input type="text" name="firstname" ngModel  placeholder=" le nom" required="true" >
+      </div>
+      <div class="form-group">
+        <label class="control-label">lastname</label>
+        <input type="text" name="lastname" required="true" class="Control" ngModel placeholder=" le prenom" >
+      </div>
+      <div class="form-group">
+        <label class="control-label">age</label>
+        <input type="text" name="age" min="1" max="99" required="true" placeholder="entre 1 et 99"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">password</label>
+        <input type="password" name="password" ngModel class="formControl" placeholder=" le mot de passe " required="true">
+      </div>
+      <div class="form-group">
+        <label class="control-label">email</label>
+        <input type="email" name="email" ngModel required="true" class="formControl" placeholder=" un valide email" >
+      </div>
+      <div class="form-group">
+        <label class="control-label">Avez-vous une maladie chronique?</label>
+        <div class="radio" >
+          <label><input type="radio" name="sick"  data-toggle="collapse" data-target="#finance" aria-expanded="false" aria-controls="finance" >non</label><label></label>
+          <label><input type="radio" name="sick"  data-toggle="collapse" data-target="#oui_sick" aria-expanded="false" aria-controls="oui_sick">oui</label>
+        </div>
+      </div>
+
+      <div class="collapse" id="oui_sick" >
+        <label class="control-label">quel est ton maladie ?</label>
+        <div class="radio">
+          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >hypertension</label><label></label>
+          <label><input type="radio" name="finance"  data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat">diabéte</label>
+        </div>
+      </div>
+
+      <div class="collapse" id="finance" >
+        <label class="control-label">Quelle est la source principale de revenu ?</label>
+        <div class="radio">
+          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >salaire</label><label></label>
+          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >petit commerce</label><label></label>
+          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >Aide réguliére de la famille</label><label></label>
+          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >grand commerce</label><label></label>
+          <label><input type="radio" name="finance"  data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat">Activités libre</label>
+        </div>
+      </div>
+
+      <div class="collapse" id="social_stat" >
+        <label class="control-label">Dans le domicile où vous résidez le plus souvent, vivez-vous :</label>
+        <div class="radio">
+          <label> En couple : <input type="radio" name="social_stat" data-toggle="collapse" data-target="#oui_couple" aria-expanded="false" aria-controls="oui_couple" >Oui </label><label></label>
+          <label><input type="radio" name="social_stat"  data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self">Non</label>
+
+        </div>
+      </div>
+
+      <div class="collapse" id="oui_couple" >
+        <label class="control-label">Avec vos enfants ou ceux de votre conjoints : </label>
+        <div class="radio">
+          <label> <input type="radio" name="oui_couple" data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self" >Oui </label><label></label>
+          <label><input type="radio" name="oui_couple"  data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self">Non</label><p></p>
+        </div>
+      </div>
+
+
+      <div class="collapse" id="self" >
+        <label class="control-label">Avez-vous fait régulièrement des trajets à pied, à vélo ou autre ?</label>
+        <div class="radio">
+          <label><input type="radio" name="self" data-toggle="collapse" data-target="#sociable" aria-expanded="false" aria-controls="sociable" >non</label><label></label>
+          <label><input type="radio" name="self"  data-toggle="collapse" data-target="#sociable" aria-expanded="false" aria-controls="sociable">oui</label>
+        </div>
+      </div>
+
+      <div class="collapse" id="sociable" >
+        <label class="control-label">Vous pratiquez une activité sociale ?</label>
+        <div class="radio">
+          <label><input type="radio" name="sociable" data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies" >Art</label><label></label>
+          <label><input type="radio" name="sociable" data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies" >Autre activités sociales</label><label></label>
+          <label><input type="radio" name="sociable"  data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies">Aucune</label>
+        </div>
+      </div>
+
+      <div class="collapse" id="hobies" >
+        <label class="control-label">Pendant vos temps libres vous préférez faire quoi ?</label>
+        <div class="radio">
+          <label><input type="radio" name="hobies"  >Cuisine </label><label></label>
+          <label><input type="radio" name="hobies"  >Regarder TV</label>
+          <label><input type="radio" name="hobies"  >jouer (quelque soit le type)</label>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
+    </form>
+
+  </div>
+
+
+
+
+</div> -->
+    <form class="contact-form row" action="" method="GET">
+      <div class="firstline">
+        <!--  first line  -->
+        <!-- first card  -->
+        <section class="get-in-touch">
+          <h4 class="title">- Identité</h4>
+          <div class="l1_c1">
+            <div class="form-field col-lg-3">
+              <input
+                id="Civilite"
+                name="Civilite"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="Civilite">Civilité</label>
+            </div>
+            <div class="form-field col-lg-3">
+              <input
+                id="Nom"
+                name="Nom"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="Nom">Nom</label>
+            </div>
+            <div class="form-field col-lg-3">
+              <input
+                id="Prenom"
+                name="Prenom"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="Prenom">Prénom</label>
+            </div>
+          </div>
+
+          <div class="form-field col-lg-12">
+            <input
+              id="Date_de_naissance"
+              name="Date_de_naissance"
+              class="input-text js-input"
+              type="date"
+              required
+            />
+            <label class="label" for="Date_de_naissance"
+              >Date de naissance</label
+            >
+          </div>
+          <div class="form-field col-lg-12">
+            <input
+              id="Situation_familiale"
+              name="Situation_familiale"
+              class="input-text js-input"
+              type="text"
+              required
+            />
+            <label class="label" for="Situation_familiale"
+              >Situation familiale</label
+            >
+          </div>
+          <div class="form-field col-lg-12">
+            <input
+              id="Nb_enfants"
+              name="Nb_enfants"
+              class="input-text js-input"
+              type="number"
+              required
+            />
+            <label class="label" for="Nb_enfants">Nombre d'enfants</label>
+          </div>
+        </section>
+        <!-- second card  -->
+        <section class="get-in-touch">
+          <h4 class="title">- Contact</h4>
+          <div class="form-field col-lg-12">
+            <input
+              id="Email"
+              name="Email"
+              class="input-text js-input"
+              type="email"
+              required
+            />
+            <label class="label" for="Email">Email</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="tel"
+              id="Tel"
+              name="Tel"
+              class="form-control"
+              required
+            />
+            <span class="input-group-addon">Tel</span>
+          </div>
+          <div class="form-field col-lg-12">
+            <input
+              id="D_Tel"
+              name="D_Tel"
+              class="input-text js-input"
+              type="text"
+              required
+            />
+            <label class="label" for="D_Tel">2éme téléphone</label>
+          </div>
+          <div class="form-field col-lg-12">
+            <input
+              id="Mobile"
+              name="Mobile"
+              class="input-text js-input"
+              type="text"
+              required
+            />
+            <label class="label" for="Mobile">Mobile</label>
+          </div>
+        </section>
+      </div>
+      <!-- finish first line  -->
+
+      <div class="firstline">
+        <!--  second line  -->
+        <!-- first card  -->
+        <section class="get-in-touch">
+          <h4 class="title">-Adresse</h4>
+          <div class="form-field col-lg-12">
+            <input id="Adresse" name="Adresse" class="input-text js-input" type="text" required />
+            <label class="label" for="Adresse">Adresse</label>
+          </div>
+          <p>.</p>
+          <div class="l1_c1">
+            <div class="form-field col-lg-6">
+              <input
+                id="Pays"
+                name="Pays"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="email">Pays</label>
+            </div>
+            <div class="form-field col-lg-5">
+              <input
+                id="Ville"
+                name="Ville"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="Ville">Ville</label>
+            </div>
+          </div>
+          <div class="l1_c1">
+            <div class="form-field col-lg-4">
+              <input
+                id="Rue"
+                name="Rue"
+                class="input-text js-input"
+                type="text"
+                required
+              />
+              <label class="label" for="phone">Rue</label>
+            </div>
+            <div class="form-field col-lg-3">
+              <input
+                id="N_Rue"
+                name="N_Rue"
+                class="input-text js-input"
+                type="number"
+                required
+              />
+              <label class="label" for="N_Rue">N° de Rue </label>
+            </div>
+            <div class="form-field col-lg-3">
+              <input
+                id="Code_Postal"
+                name="Code_Postal"
+                class="input-text js-input"
+                type="number"
+                required
+              />
+              <label class="label" for="Code_Postal">Code Postal</label>
+            </div>
+          </div>
+
+          <div class="form-field col-lg-12">
+            <input
+              id="C_adresse"
+              name="C_adresse"
+              class="input-text js-input"
+              type="text"
+              required
+            />
+            <label class="label" for="C_adresse">Complément d'adresse</label>
+          </div>
+        </section>
+        <!-- second card  -->
+        <section class="get-in-touch">
+          <h4 class="title">-Informations complémentaires</h4>
+          <div class="form-field col-lg-12">
+            <input id="M_cle" name="M_cle" class="input-text js-input" type="text" required />
+            <label class="label" for="M_cle">Mots-clés</label>
+          </div>
+          <div class="form-field col-lg-12">
+            <input
+              id="comment"
+              class="input-text js-input"
+              type="textarea"
+              required
+            />
+            <label class="label" for="comment"
+              >Commentaire sur le prospect</label
+            >
+          </div>
+          <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Enregistrer" />
+          </div>
+        </section>
+      </div>
+      <!-- finish second line  -->
+    </form>
+  </body>
+</html>

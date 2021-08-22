@@ -1,0 +1,34 @@
+
+
+<p>
+  liste personne
+</p>
+<table class="table col-lg-9">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">nom</th>
+    <th scope="col">prenom</th>
+    <th scope="col">relations</th>
+
+  </tr>
+  </thead>
+  <tbody *ngIf="person">
+  <tr  *ngFor="let c of person">
+    <td>{{c.id}}</td>
+    <td>{{c.nom}}</td>
+    <td>{{c.prenom}}</td>
+    <td> </td>
+
+  </tr>
+
+  
+
+  </tbody>
+</table>
+<div>
+  {{person}}
+</div>
+
+
+
