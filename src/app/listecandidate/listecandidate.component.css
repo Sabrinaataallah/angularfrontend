@@ -1,0 +1,13 @@
+.contain{
+    display: flex;
+    flex-direction: column;
+    padding: 0% 20%;
+    text-align: center;
+    
+}
+h1{
+    margin: 5% 0%;
+}
+th{
+    text-align: center;
+}

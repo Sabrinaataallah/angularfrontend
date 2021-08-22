@@ -1,116 +1,7 @@
 <html>
   <head> </head>
   <body>
-    <!-- <div class="panel panel-default">
-  <div class="panel-heading">inscription</div>
-  <div>
-    <form data-toggle="validator" role="form" #f="ngForm" (ngSubmit)="onInscri(f.value)" >
-      <div class="form-group">
-        <label class="control-label">firstname</label>
-        <input type="text" name="firstname" ngModel  placeholder=" le nom" required="true" >
-      </div>
-      <div class="form-group">
-        <label class="control-label">lastname</label>
-        <input type="text" name="lastname" required="true" class="Control" ngModel placeholder=" le prenom" >
-      </div>
-      <div class="form-group">
-        <label class="control-label">age</label>
-        <input type="text" name="age" min="1" max="99" required="true" placeholder="entre 1 et 99"/>
-      </div>
-      <div class="form-group">
-        <label class="control-label">password</label>
-        <input type="password" name="password" ngModel class="formControl" placeholder=" le mot de passe " required="true">
-      </div>
-      <div class="form-group">
-        <label class="control-label">email</label>
-        <input type="email" name="email" ngModel required="true" class="formControl" placeholder=" un valide email" >
-      </div>
-      <div class="form-group">
-        <label class="control-label">Avez-vous une maladie chronique?</label>
-        <div class="radio" >
-          <label><input type="radio" name="sick"  data-toggle="collapse" data-target="#finance" aria-expanded="false" aria-controls="finance" >non</label><label></label>
-          <label><input type="radio" name="sick"  data-toggle="collapse" data-target="#oui_sick" aria-expanded="false" aria-controls="oui_sick">oui</label>
-        </div>
-      </div>
 
-      <div class="collapse" id="oui_sick" >
-        <label class="control-label">quel est ton maladie ?</label>
-        <div class="radio">
-          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >hypertension</label><label></label>
-          <label><input type="radio" name="finance"  data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat">diabéte</label>
-        </div>
-      </div>
-
-      <div class="collapse" id="finance" >
-        <label class="control-label">Quelle est la source principale de revenu ?</label>
-        <div class="radio">
-          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >salaire</label><label></label>
-          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >petit commerce</label><label></label>
-          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >Aide réguliére de la famille</label><label></label>
-          <label><input type="radio" name="finance" data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat" >grand commerce</label><label></label>
-          <label><input type="radio" name="finance"  data-toggle="collapse" data-target="#social_stat" aria-expanded="false" aria-controls="social_stat">Activités libre</label>
-        </div>
-      </div>
-
-      <div class="collapse" id="social_stat" >
-        <label class="control-label">Dans le domicile où vous résidez le plus souvent, vivez-vous :</label>
-        <div class="radio">
-          <label> En couple : <input type="radio" name="social_stat" data-toggle="collapse" data-target="#oui_couple" aria-expanded="false" aria-controls="oui_couple" >Oui </label><label></label>
-          <label><input type="radio" name="social_stat"  data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self">Non</label>
-
-        </div>
-      </div>
-
-      <div class="collapse" id="oui_couple" >
-        <label class="control-label">Avec vos enfants ou ceux de votre conjoints : </label>
-        <div class="radio">
-          <label> <input type="radio" name="oui_couple" data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self" >Oui </label><label></label>
-          <label><input type="radio" name="oui_couple"  data-toggle="collapse" data-target="#self" aria-expanded="false" aria-controls="self">Non</label><p></p>
-        </div>
-      </div>
-
-
-      <div class="collapse" id="self" >
-        <label class="control-label">Avez-vous fait régulièrement des trajets à pied, à vélo ou autre ?</label>
-        <div class="radio">
-          <label><input type="radio" name="self" data-toggle="collapse" data-target="#sociable" aria-expanded="false" aria-controls="sociable" >non</label><label></label>
-          <label><input type="radio" name="self"  data-toggle="collapse" data-target="#sociable" aria-expanded="false" aria-controls="sociable">oui</label>
-        </div>
-      </div>
-
-      <div class="collapse" id="sociable" >
-        <label class="control-label">Vous pratiquez une activité sociale ?</label>
-        <div class="radio">
-          <label><input type="radio" name="sociable" data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies" >Art</label><label></label>
-          <label><input type="radio" name="sociable" data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies" >Autre activités sociales</label><label></label>
-          <label><input type="radio" name="sociable"  data-toggle="collapse" data-target="#hobies" aria-expanded="false" aria-controls="hobies">Aucune</label>
-        </div>
-      </div>
-
-      <div class="collapse" id="hobies" >
-        <label class="control-label">Pendant vos temps libres vous préférez faire quoi ?</label>
-        <div class="radio">
-          <label><input type="radio" name="hobies"  >Cuisine </label><label></label>
-          <label><input type="radio" name="hobies"  >Regarder TV</label>
-          <label><input type="radio" name="hobies"  >jouer (quelque soit le type)</label>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" >Submit</button>
-      </div>
-    </form>
-
-  </div>
-
-
-
-
-</div> -->
     <form class="contact-form row" action="" method="GET">
       <div class="firstline">
         <!--  first line  -->
@@ -119,14 +10,31 @@
           <h4 class="title">- Identité</h4>
           <div class="l1_c1">
             <div class="form-field col-lg-3">
-              <input
+              <!-- <input
                 id="Civilite"
                 name="Civilite"
                 class="input-text js-input"
                 type="text"
                 required
               />
+               -->
+               
               <label class="label" for="Civilite">Civilité</label>
+              <select                 class="input-text js-input"
+               name="pets" id="pet-select">
+                <option value=""> </option>
+                <option value="monsieur">M.</option>   
+                <option value="madame">Mme</option>
+                <option value="mademoiselle">Mlle</option>        
+
+                
+             
+            </select>
+              
+              <span>
+                
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
             </div>
             <div class="form-field col-lg-3">
               <input
@@ -157,10 +65,11 @@
               class="input-text js-input"
               type="date"
               required
+              onfocus="(this.type='date')" onfocusout="(this.type='text')"
+          
             />
             <label class="label" for="Date_de_naissance"
-              >Date de naissance</label
-            >
+              >Date de naissance</label >
           </div>
           <div class="form-field col-lg-12">
             <input
@@ -264,7 +173,7 @@
               <label class="label" for="Ville">Ville</label>
             </div>
           </div>
-          <div class="l1_c1">
+          <div class="l1_c1 col-lg-12">
             <div class="form-field col-lg-4">
               <input
                 id="Rue"
@@ -275,7 +184,7 @@
               />
               <label class="label" for="phone">Rue</label>
             </div>
-            <div class="form-field col-lg-3">
+            <div class="form-field col-lg-6">
               <input
                 id="N_Rue"
                 name="N_Rue"
@@ -285,7 +194,7 @@
               />
               <label class="label" for="N_Rue">N° de Rue </label>
             </div>
-            <div class="form-field col-lg-3">
+            <div class="form-field col-lg-6">
               <input
                 id="Code_Postal"
                 name="Code_Postal"
@@ -318,7 +227,8 @@
           <div class="form-field col-lg-12">
             <input
               id="comment"
-              class="input-text js-input"
+              class="input-text js-input  text_area" 
+              
               type="textarea"
               required
             />

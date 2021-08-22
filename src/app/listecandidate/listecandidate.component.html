@@ -1,34 +1,31 @@
 
-
-<p>
-  liste personne
-</p>
-<table class="table col-lg-9">
-  <thead>
-  <tr>
-    <th scope="col">id</th>
-    <th scope="col">nom</th>
-    <th scope="col">prenom</th>
-    <th scope="col">relations</th>
-
-  </tr>
-  </thead>
-  <tbody *ngIf="person">
-  <tr  *ngFor="let c of person">
-    <td>{{c.id}}</td>
-    <td>{{c.nom}}</td>
-    <td>{{c.prenom}}</td>
-    <td> </td>
-
-  </tr>
-
+<div class="contain">
+  <h1> Liste personnes</h1>
+  <table class="table table-striped ">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">relations</th>
   
-
-  </tbody>
-</table>
-<div>
-  {{person}}
+    </tr>
+    </thead>
+    <tbody *ngIf="person">
+    <tr  *ngFor="let p of person">
+      <td>{{p[0]}}</td>
+      <td>{{p[2]}}</td>
+      <td>{{p[3]}}</td>
+      <td> </td>
+  
+    </tr>
+  
+    
+  
+    </tbody>
+  </table>
+  
+  
+  
+  
 </div>
-
-
-

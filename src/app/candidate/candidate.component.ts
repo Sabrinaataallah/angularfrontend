@@ -20,7 +20,7 @@ export class CandidateComponent implements OnInit {
 
   onInscri(data) {
 
-    this.formService.Inscri('http://localhost:8080/register', data)
+    this.formService.Inscri('http://localhost:5000/register', data)
       .subscribe(data => {
         console.log(data);
       }, error => {
