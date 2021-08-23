@@ -1,8 +1,7 @@
 <html>
   <head> </head>
   <body>
-
-    <form class="contact-form row" action="" method="GET">
+    <form class="contact-form row" #f="ngForm" (ngSubmit)="onInscri(f.value)" >
       <div class="firstline">
         <!--  first line  -->
         <!-- first card  -->
@@ -10,29 +9,14 @@
           <h4 class="title">- Identité</h4>
           <div class="l1_c1">
             <div class="form-field col-lg-3">
-              <!-- <input
-                id="Civilite"
-                name="Civilite"
-                class="input-text js-input"
-                type="text"
-                required
-              />
-               -->
-               
-              <label class="label" for="Civilite">Civilité</label>
-              <select                 class="input-text js-input"
-               name="pets" id="pet-select">
-                <option value=""> </option>
-                <option value="monsieur">M.</option>   
+              <select class="input-text js-input" name="civilite" id="civilite" ngModel>
+                <option value="">Civilité</option>
+                <option value="monsieur">M.</option>
                 <option value="madame">Mme</option>
-                <option value="mademoiselle">Mlle</option>        
+                <option value="mademoiselle">Mlle</option>
+              </select>
 
-                
-             
-            </select>
-              
               <span>
-                
                 <i class="fa fa-user" aria-hidden="true"></i>
               </span>
             </div>
@@ -43,8 +27,9 @@
                 class="input-text js-input"
                 type="text"
                 required
+                placeholder="Nom"
+                ngModel
               />
-              <label class="label" for="Nom">Nom</label>
             </div>
             <div class="form-field col-lg-3">
               <input
@@ -53,8 +38,9 @@
                 class="input-text js-input"
                 type="text"
                 required
+                placeholder="Prénom"
+                [(ngModel)]="Prenom"
               />
-              <label class="label" for="Prenom">Prénom</label>
             </div>
           </div>
 
@@ -65,11 +51,9 @@
               class="input-text js-input"
               type="date"
               required
-              onfocus="(this.type='date')" onfocusout="(this.type='text')"
-          
+              placeholder="Date de Naissance"
+              [(ngModel)]="Date_de_naissance"
             />
-            <label class="label" for="Date_de_naissance"
-              >Date de naissance</label >
           </div>
           <div class="form-field col-lg-12">
             <input
@@ -78,10 +62,9 @@
               class="input-text js-input"
               type="text"
               required
+              placeholder="Situation familiale"
+              [(ngModel)]="Situation_familiale"
             />
-            <label class="label" for="Situation_familiale"
-              >Situation familiale</label
-            >
           </div>
           <div class="form-field col-lg-12">
             <input
@@ -90,12 +73,13 @@
               class="input-text js-input"
               type="number"
               required
+              placeholder="Nombre d'enfants"
+              [(ngModel)]="Nb_enfants"
             />
-            <label class="label" for="Nb_enfants">Nombre d'enfants</label>
           </div>
         </section>
         <!-- second card  -->
-        <section class="get-in-touch">
+       <section class="get-in-touch"> 
           <h4 class="title">- Contact</h4>
           <div class="form-field col-lg-12">
             <input
@@ -104,18 +88,22 @@
               class="input-text js-input"
               type="email"
               required
+              placeholder="Email"
+              ngModel
             />
-            <label class="label" for="Email">Email</label>
           </div>
-          <div class="input-group">
+          <div class="form-field col-lg-12">
             <input
-              type="tel"
               id="Tel"
               name="Tel"
-              class="form-control"
+              class="input-text js-input"
+              type="text"
               required
+              ng2TelInput
+              placeholder="Tél"
+              ngModel
+               
             />
-            <span class="input-group-addon">Tel</span>
           </div>
           <div class="form-field col-lg-12">
             <input
@@ -124,8 +112,10 @@
               class="input-text js-input"
               type="text"
               required
+              ng2TelInput
+              placeholder="2eme Tél"
+              ngModel
             />
-            <label class="label" for="D_Tel">2éme téléphone</label>
           </div>
           <div class="form-field col-lg-12">
             <input
@@ -134,21 +124,30 @@
               class="input-text js-input"
               type="text"
               required
+              ng2TelInput
+              placeholder="Mobile"
+              ngModel
             />
-            <label class="label" for="Mobile">Mobile</label>
           </div>
-        </section>
+        </section> 
       </div>
       <!-- finish first line  -->
 
       <div class="firstline">
         <!--  second line  -->
         <!-- first card  -->
-        <section class="get-in-touch">
+         <section class="get-in-touch">
           <h4 class="title">-Adresse</h4>
           <div class="form-field col-lg-12">
-            <input id="Adresse" name="Adresse" class="input-text js-input" type="text" required />
-            <label class="label" for="Adresse">Adresse</label>
+            <input
+              id="Adresse"
+              name="Adresse"
+              class="input-text js-input"
+              type="text"
+              required
+              placeholder="Adresse"
+              ngModel
+            />
           </div>
           <p>.</p>
           <div class="l1_c1">
@@ -159,8 +158,9 @@
                 class="input-text js-input"
                 type="text"
                 required
+                placeholder="Pays"
+                ngModel
               />
-              <label class="label" for="email">Pays</label>
             </div>
             <div class="form-field col-lg-5">
               <input
@@ -169,8 +169,9 @@
                 class="input-text js-input"
                 type="text"
                 required
+                placeholder="Ville"
+                ngModel
               />
-              <label class="label" for="Ville">Ville</label>
             </div>
           </div>
           <div class="l1_c1 col-lg-12">
@@ -181,8 +182,9 @@
                 class="input-text js-input"
                 type="text"
                 required
+                placeholder="Rue"
+                ngModel
               />
-              <label class="label" for="phone">Rue</label>
             </div>
             <div class="form-field col-lg-6">
               <input
@@ -191,8 +193,9 @@
                 class="input-text js-input"
                 type="number"
                 required
+                placeholder="N° de Rue"
+                ngModel
               />
-              <label class="label" for="N_Rue">N° de Rue </label>
             </div>
             <div class="form-field col-lg-6">
               <input
@@ -201,8 +204,9 @@
                 class="input-text js-input"
                 type="number"
                 required
+                placeholder="Code postal"
+                ngModel
               />
-              <label class="label" for="Code_Postal">Code Postal</label>
             </div>
           </div>
 
@@ -213,28 +217,35 @@
               class="input-text js-input"
               type="text"
               required
+              placeholder="Complement d'adresse"
+              ngModel
             />
-            <label class="label" for="C_adresse">Complément d'adresse</label>
           </div>
-        </section>
+        </section> 
         <!-- second card  -->
         <section class="get-in-touch">
           <h4 class="title">-Informations complémentaires</h4>
           <div class="form-field col-lg-12">
-            <input id="M_cle" name="M_cle" class="input-text js-input" type="text" required />
-            <label class="label" for="M_cle">Mots-clés</label>
+            <input
+              id="M_cle"
+              name="M_cle"
+              class="input-text js-input"
+              type="text"
+              required
+              placeholder="Mots clés"
+              ngModel="M_cle"
+            />
           </div>
           <div class="form-field col-lg-12">
             <input
               id="comment"
-              class="input-text js-input  text_area" 
-              
+              name="comment"
+              class="input-text js-input text_area"
               type="textarea"
               required
+              placeholder="Commentaire sur le prospect"
+              ngModel="comment"
             />
-            <label class="label" for="comment"
-              >Commentaire sur le prospect</label
-            >
           </div>
           <div class="form-field col-lg-12">
             <input class="submit-btn" type="submit" value="Enregistrer" />

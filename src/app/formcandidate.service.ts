@@ -14,8 +14,8 @@ export class FormcandidateService {
     return this.http.get('http://127.0.0.1:5000/listepersonne');
   }
 
-  Inscri(url, data) {
-    return this.http.post(url, data);
+  Inscri(data) {
+    return this.http.post('http://127.0.0.1:5000/insertpersonne', data);
   }
 
 }
